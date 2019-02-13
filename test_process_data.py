@@ -19,6 +19,7 @@ def test_correct_diag(inputs, exp):
     Returns:
         none
     """
+
     ans = diag(inputs)
     print(ans)
     assert ans == exp

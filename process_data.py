@@ -10,6 +10,7 @@ def read_data():
         in_file.readlines() (list): the test data text file, parsed in line by
         line
     """
+
     in_file = open("test_data.txt", "r")
     return in_file.readlines()
 
@@ -29,6 +30,7 @@ def proc_data(raw_data):
         data (list): list of all patient data with "\n" removed
         patients (list): list containing dictionaries with partial patient info
     """
+
     data = []
     # 'patients' will be a list of dictionaries (one per patient)
     patients = []
@@ -69,6 +71,7 @@ def get_tsh(data):
         tsh_results (list): list of lists of patient TSH results
 
     """
+
     tsh_results = []
     tsh_results_str = []
     j = 0
@@ -99,6 +102,7 @@ def diag(input):
         diagnosis (string): string containing diagnosis based on TSH results
         (one of the three options above)
     """
+
     # initially assume normal thyroid function
     ans = 0
     # check for hyper-/hypothyroidism
@@ -130,6 +134,7 @@ def finish_dict(tsh_results, patients):
     Returns:
         patients (list): complete list of patient dictionaries
     """
+
     for i in range(len(patients)):
         patients[i]['Diagnosis'] = diag(tsh_results[i])
         tsh_results[i].sort()
@@ -150,6 +155,7 @@ def save_result(i):
     Returns:
         none
     """
+
     import json
     filename = patients[i]['First Name'] + "-"
     filename += patients[i]['Last Name'] + ".json"
