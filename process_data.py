@@ -67,6 +67,7 @@ def diag(input):
 def finish_dict(tsh_results, patients):
     for i in range(len(patients)):
         patients[i]['Diagnosis'] = diag(tsh_results[i])
+        tsh_results[i].sort()
         patients[i]['TSH results'] = tsh_results[i]
     return patients
 
